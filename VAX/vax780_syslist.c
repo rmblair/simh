@@ -31,6 +31,8 @@
 
 char sim_name[] = "VAX780";
 
+#include "vax_dmc.h"
+
 extern DEVICE cpu_dev;
 extern DEVICE tlb_dev;
 extern DEVICE sbi_dev;
@@ -54,6 +56,7 @@ extern DEVICE tu_dev;
 extern DEVICE dz_dev;
 extern DEVICE vh_dev;
 extern DEVICE xu_dev, xub_dev;
+extern DEVICE dmc_dev[DMC_NUMDEVICE], dmp_dev[DMP_NUMDEVICE];
 
 extern int32 sim_switches;
 extern UNIT cpu_unit;
@@ -91,6 +94,11 @@ DEVICE *sim_devices[] = {
     &tq_dev,
     &xu_dev,
     &xub_dev,
+    &dmc_dev[0],
+    &dmc_dev[1],
+    &dmc_dev[2],
+    &dmc_dev[3],
+    &dmp_dev[0],
     NULL
     };
 

@@ -313,6 +313,8 @@ typedef struct {
 #define IOLN_PTR        004
 #define IOBA_PTP        (IOPAGEBASE + 017554)           /* PC11 punch */
 #define IOLN_PTP        004
+#define IOBA_DMC        (IOPAGEBASE + 0760060)          /* DMC11 serial */
+#define IOLN_DMC        010
 
 /* Interrupt assignments; within each level, priority is right to left */
 
@@ -333,6 +335,9 @@ typedef struct {
 #define INT_V_VHRX      4
 #define INT_V_VHTX      5
 
+#define INT_V_DMCRX     9
+#define INT_V_DMCTX     10
+
 #define INT_DZRX        (1u << INT_V_DZRX)
 #define INT_DZTX        (1u << INT_V_DZTX)
 #define INT_HK          (1u << INT_V_HK)
@@ -348,6 +353,8 @@ typedef struct {
 #define INT_PTR         (1u << INT_V_PTR)
 #define INT_PTP         (1u << INT_V_PTP)
 #define INT_CR          (1u << INT_V_CR)
+#define INT_DMCRX       (1u << INT_V_DMCRX)
+#define INT_DMCTX       (1u << INT_V_DMCTX)
 
 #define IPL_DZRX        (0x15 - IPL_HMIN)
 #define IPL_DZTX        (0x15 - IPL_HMIN)
@@ -364,6 +371,8 @@ typedef struct {
 #define IPL_CR          (0x14 - IPL_HMIN)
 #define IPL_VHRX        (0x14 - IPL_HMIN)
 #define IPL_VHTX        (0x14 - IPL_HMIN)
+#define IPL_DMCRX       (0x15 - IPL_HMIN)
+#define IPL_DMCTX       (0x15 - IPL_HMIN)
 
 /* Device vectors */
 
@@ -386,6 +395,8 @@ typedef struct {
 #define VEC_DZTX        0304
 #define VEC_VHRX        0310
 #define VEC_VHTX        0314
+#define VEC_DMCRX       0310
+#define VEC_DMCTX       0314
 
 /* Interrupt macros */
 
